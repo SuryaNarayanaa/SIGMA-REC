@@ -1,3 +1,52 @@
+
+## Setup Instructions
+
+1. **Clone the repository:**
+    ```sh
+    git clone https://github.com/SuryaNarayanaa/SIGMA-REC.git
+    cd SIGMA-REC    
+    ```
+
+2. **Create and activate a virtual environment:**
+    ```sh
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install dependencies:**
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+4. **Set up environment variables:**
+    Create a `.env` file in the root directory and add your environment variables:
+    ```
+    PORT=your_port_number
+    MONGO_INITDB_DATABASE=your_database_name
+    MONGO_INITDB_ROOT_USERNAME=your_username
+    MONGO_INITDB_ROOT_PASSWORD=your_password
+    JWT_SECRET_KEY=your_jwt_secret_key
+
+5. **Run the application:**
+    ```sh
+    flask run
+    ```
+
+<!-- ## Testing
+
+1. **Run unit tests:**
+    ```sh
+    pytest
+    ``` -->
+
+**Test API endpoints:**
+
+
+ You can test the API endpoints using Postman by accessing  the following link:
+
+ [Postman API Documentation](bit.ly/SIGMA-API)
+
+
 ## API Endpoints
 
 Below is a quick reference table of the main endpoints. Some routes require a valid JWT token and/or admin privileges (`isadmin = true`). Adjust as necessary if your routes differ slightly.
@@ -25,13 +74,8 @@ Authorization: Bearer <ACCESS_TOKEN>
 This project follows a number of secure coding practices:
 
 - **Hashed Passwords:** Uses bcrypt/werkzeug for password hashing.
-
 - **JWT Token Revocation:** Logout adds the token’s unique ID to a blocklist.
-
 - **Environment Variables:** Sensitive credentials (like `MONGO_URI`, `JWT_SECRET_KEY`) can be placed in a `.env` file.
-
 - **Basic Input Validation:** Checks for required fields; can be extended with libraries like marshmallow.
-
 - **Error Handling:** Generic errors are returned to avoid leaking stack traces.
-
 - **Docker Isolation:** Flask and MongoDB run in separate containers.

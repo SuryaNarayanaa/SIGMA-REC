@@ -1,5 +1,7 @@
+from logging import Logger
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity, get_jwt, unset_jwt_cookies
+from flask_wtf.csrf import CSRFError
 from datetime import timedelta
 from .utils import validate_password, get_user_by_email, get_all_users, find_by_id, update_record, delete_user_by_id
 from .models import User
@@ -141,3 +143,8 @@ def delete_user(user_id):
         return jsonify({"error": "User not found"}), 404
 
     return jsonify({"message": f"User deleted successfully. Count: {count}"}), 200
+
+
+@user.errorhandler(CSRFError)
+def handle_csrf_error(e):
+    return jsonify({"error": "CSRF token missing or incorrect."}), 400    

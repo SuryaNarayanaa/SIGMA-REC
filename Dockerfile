@@ -1,7 +1,6 @@
-
 FROM python:3.9-slim
 
-WORKDIR /app
+WORKDIR /working_dir
 
 COPY requirements.txt .
 
@@ -11,4 +10,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["python", "run.py"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:create_app()"]

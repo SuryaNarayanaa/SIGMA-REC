@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr, Field
-
+from typing import Optional
 
 class UserRegistrationModel(BaseModel):
     username: str = Field(..., min_length=3, max_length=30)
@@ -14,8 +14,9 @@ class UserLoginModel(BaseModel):
 
 
 class UserUpdateModel(BaseModel):
-    username: str | None = Field(None, min_length=3, max_length=30)
-    email: EmailStr | None = None
-    password: str | None = Field(None, min_length=6)
-    isadmin: bool | None = False
+    
+    username: Optional[str] = Field(None, min_length=3, max_length=30)
+    email: Optional[EmailStr] = None
+    password: Optional[str] = Field(None, min_length=6)
+    isadmin: Optional[bool] = False
 

@@ -7,3 +7,7 @@ PyJWT==2.9.0
 pydantic
 pydantic[email]
 coloredlogs
+Flask-WTF
+flask-talisman
+flask-limiter
+gunicorn
