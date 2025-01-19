@@ -2,7 +2,7 @@ from app import create_app
 app = create_app()
 
 def test_init_app():
-    assert app is  None
+    assert app is not  None
     assert app.config["TESTING"] is False
 
 def test_database_initialization():
