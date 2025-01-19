@@ -6,3 +6,4 @@ flask_jwt_extended
 PyJWT==2.9.0
 pydantic
 pydantic[email]
+coloredlogs

@@ -1,6 +1,11 @@
 from flask import current_app
 import pymongo
 from werkzeug.security import generate_password_hash, check_password_hash
+import logging 
+import coloredlogs
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+coloredlogs.install(level='INFO', logger=logger, fmt='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
 class User:
@@ -26,9 +31,10 @@ class User:
                 'password': generate_password_hash(self.password),
                 'isadmin': self.isadmin
             })
+            logger.info(f"User {self.username} saved successfully.")
         except pymongo.errors.DuplicateKeyError as e:
-            print(f"Error: {e}")
+            logger.error(f"Duplicate key error: {e}")
         except Exception as e:
-            print(f"Error: {e}")
+            logger.error(f"An error occurred: {e}")
 
         
