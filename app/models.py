@@ -1,6 +1,6 @@
 from flask import current_app
 import pymongo
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash
 import logging 
 import coloredlogs
 logging.basicConfig(level=logging.INFO)
