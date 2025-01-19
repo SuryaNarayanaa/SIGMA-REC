@@ -102,5 +102,5 @@ def handle_exception(e):
 
 - **Purpose**: Ensures that each component operates in a self-contained environment, limiting the blast radius of potential breaches.
 ### Dockerfile :   [Dockerfile](./Dockerfile)
-
+### docker-compose.yml :   [docker-compose.yml](./docker-compose.yml)
 
