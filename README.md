@@ -21,11 +21,12 @@
 4. **Set up environment variables:**
     Create a `.env` file in the root directory and add your environment variables:
     ```
-    PORT=your_port_number
-    MONGO_INITDB_DATABASE=your_database_name
-    MONGO_INITDB_ROOT_USERNAME=your_username
-    MONGO_INITDB_ROOT_PASSWORD=your_password
-    JWT_SECRET_KEY=your_jwt_secret_key
+    PORT                       = port_number
+    SECRET_KEY                 = flask_secret_key
+    MONGO_INITDB_DATABASE      = database_name 
+    MONGO_INITDB_ROOT_USERNAME = mongo_user_name
+    MONGO_INITDB_ROOT_PASSWORD = mongo_user_password
+    JWT_SECRET_KEY             = jwt_secret_key
 
 5. **Run the application:**
     ```sh
@@ -68,14 +69,3 @@ Include a header:
 ```
 Authorization: Bearer <ACCESS_TOKEN>
 ```
-
-## Security
-
-This project follows a number of secure coding practices:
-
-- **Hashed Passwords:** Uses bcrypt/werkzeug for password hashing.
-- **JWT Token Revocation:** Logout adds the token’s unique ID to a blocklist.
-- **Environment Variables:** Sensitive credentials (like `MONGO_URI`, `JWT_SECRET_KEY`) can be placed in a `.env` file.
-- **Basic Input Validation:** Checks for required fields; can be extended with libraries like marshmallow.
-- **Error Handling:** Generic errors are returned to avoid leaking stack traces.
-- **Docker Isolation:** Flask and MongoDB run in separate containers.
