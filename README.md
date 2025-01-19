@@ -33,13 +33,32 @@
     flask run
     ```
 
+
+6. **Run with Docker:**
+
+    **Build the Docker image:**
+    ```sh
+    docker build -t sigma-rec .
+    ```
+
+    **Run the Docker container:**
+    ```sh
+    docker run -d -p 5000:5000 --name sigma-rec-container sigma-rec
+    ```
+
+7. **Run both Flask and MongoBD with Docker Compose:**
+    ```sh
+    docker-compose up -d
+    ```
+
+
 <!-- ## Testing
 
 1. **Run unit tests:**
     ```sh
     pytest
     ``` -->
-6. **Testing the modules**:
+8. **Testing the modules**:
 
     Added `Unit Testing` to each modules and helper functions with the help of  `pytest` package 
 
@@ -58,7 +77,7 @@
     pytest -v
     ```
 
-7. **Continuous Integration:**
+9. **Continuous Integration:**
 
     A `ci.yml` file has been added for Continuous Integration (CI) using GitHub Actions. This file is located in the `.github/workflows` directory and is configured to run tests and checks on every push and pull request to the repository.
 
@@ -70,7 +89,7 @@
 
  You can test the API endpoints using Postman by accessing  the following link:
 
- [Postman API Documentation](bit.ly/SIGMA-API)
+ [Postman API Documentation](https://bit.ly/SIGMA-API)
 
 
 ## API Endpoints

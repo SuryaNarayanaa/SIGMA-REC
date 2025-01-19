@@ -44,7 +44,7 @@ limiter = Limiter(
 
 ## 4. **Environment Variables**
 
-- **Implementation**: Sensitive credentials like `MONGO_URI` and `JWT_SECRET_KEY` are stored in a `.env` file and loaded into the application.
+- **Implementation**: Sensitive credentials like `MONGO_URI` and `JWT_SECRET_KEY` are stored in a `.env` file and loaded into the application. Environment variables are also used in the `Dockerfile` and `docker-compose.yml` to ensure these files do not expose secrets.
 
 - **Purpose**: Prevents sensitive information from being hardcoded into the application, reducing the risk of exposure.
 
