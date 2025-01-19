@@ -11,3 +11,4 @@ Flask-WTF
 flask-talisman
 flask-limiter
 gunicorn
+pytest
