@@ -58,6 +58,11 @@
     pytest -v
     ```
 
+7. **Continuous Integration:**
+
+    A `ci.yml` file has been added for Continuous Integration (CI) using GitHub Actions. This file is located in the `.github/workflows` directory and is configured to run tests and checks on every push and pull request to the repository.
+
+
 
 
 **Test API endpoints:**
