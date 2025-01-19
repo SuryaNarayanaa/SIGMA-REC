@@ -1,4 +1,3 @@
-from logging import Logger
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity, get_jwt, unset_jwt_cookies
 from flask_wtf.csrf import CSRFError

@@ -39,6 +39,26 @@
     ```sh
     pytest
     ``` -->
+6. **Testing the modules**:
+
+    Added `Unit Testing` to each modules and helper functions with the help of  `pytest` package 
+
+    **To Test all the files under \test**
+    ```sh
+    pytest
+    ```
+
+    **To Test individual file under \test**
+    ```sh
+    pytest test\{testing_file_name.py}
+    ```
+
+    **To Test Files with verbose \test**
+    ```sh
+    pytest -v
+    ```
+
+
 
 **Test API endpoints:**
 
